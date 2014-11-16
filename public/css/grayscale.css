@@ -153,10 +153,15 @@ a:focus {
 
 .intro .intro-body .brand-heading {
     font-size: 40px;
+    color: #B2AFAF;
+     text-shadow: 0px 1px 1px #000;
 }
 
 .intro .intro-body .intro-text {
     font-size: 18px;
+    color: #B2AFAF;
+     text-shadow: 0px 1px 1px #000;
+
 }
 
 @media(min-width:767px) {
@@ -179,10 +184,10 @@ a:focus {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid #fff;
+    border: 2px solid #B2AFAF;
     border-radius: 35px;
     font-size: 40px;
-    color: #fff;
+    color: #B2AFAF;
     background: 0 0;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -252,19 +257,8 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url() no-repeat top center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+.services-section {
+    
 }
 
 #map {
@@ -276,10 +270,12 @@ a:focus {
 @media(min-width:767px) {
     .content-section {
         padding-top: 150px;
+        
     }
 
-    .download-section {
+    .services-section {
         padding: 100px 0;
+        height: 100vh;
     }
 
     #map {

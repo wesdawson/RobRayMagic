@@ -3,11 +3,27 @@
 // grab the nerd model we just created
 var Nerd = require('./models/nerd');
 
-    module.exports = function(app) {
+module.exports = function(app) {
 
         // server routes ===========================================================
         // handle things like api calls
         // authentication routes
+
+        console.log('app.post');
+
+        app.post('/email', function(req, res) {
+
+            console.log(req.body);
+
+            smtpTransport.sendMail(mailOptions, function(error, response){
+                if(error){
+                    console.log(error);
+                }else{
+                    console.log("Message sent: " + response.message);
+                }
+            });
+
+        });
 
         // sample api route
         app.get('/api/nerds', function(req, res) {
@@ -16,8 +32,8 @@ var Nerd = require('./models/nerd');
 
                 // if there is an error retrieving, send the error. 
                                 // nothing after res.send(err) will execute
-                if (err)
-                    res.send(err);
+                                if (err)
+                                    res.send(err);
 
                 res.json(nerds); // return all nerds in JSON format
             });
@@ -33,3 +49,5 @@ var Nerd = require('./models/nerd');
         });
 
     };
+
+

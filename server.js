@@ -3,15 +3,40 @@
 
 // modules =================================================
 var express        = require('express');
-var nodemailer = require("nodemailer");
+var nodemailer	   = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
 var app            = express();
 var mongoose       = require('mongoose');
-var logger = require('morgan');
+var logger	       = require('morgan');
 var bodyParser     = require('body-parser');
-var methodOverride = require('method-override'); 
+var methodOverride = require('method-override');
+
+var http = require('http');
+var path = require('path'); 
+var router = express.Router();
+
 
 
 // configuration ===========================================
+var nodemailer = require("nodemailer");
+
+var smtpTransport = nodemailer.createTransport("SMTP",{
+   service: "Gmail",
+   auth: {
+       user: "wesley.s.dawson@gmail.com",
+       pass: "Wd654654"
+   }
+});
+
+// var mailOptions = {
+//    from: $scope.user.email, // sender address
+//    to: "magicrobertray@Gmail.com", // list of receivers
+//    subject: $scope.user.name, // Subject line
+//    text: $scope.user.body // plaintext body
+// };
+
+console.log('SMTP Configured');
+
 	
 // config files
 var db = require('./config/db');
